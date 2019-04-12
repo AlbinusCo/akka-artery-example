@@ -1,0 +1,34 @@
+version: '2'
+services:
+ node1:
+  image: albinusco/akka-artery-example:1.0.1
+  container_name: node1
+  hostname: node1
+  volumes:
+   - ./docker/node1/:/opt/docker/conf/
+   - ./docker/jolokia/:/opt/jolokia/
+  ports:
+    - 7071:7070
+ node2:
+  image: albinusco/akka-artery-example:1.0.1
+  container_name: node2
+  hostname: node2
+  depends_on:
+    - node1
+  volumes:
+   - ./docker/node2/:/opt/docker/conf/
+   - ./docker/jolokia/:/opt/jolokia/
+  ports:
+    - 7072:7070
+ node3:
+  image: albinusco/akka-artery-example:1.0.1
+  container_name: node3
+  hostname: node3
+  depends_on:
+    - node1
+    - node2
+  volumes:
+   - ./docker/node3/:/opt/docker/conf/
+   - ./docker/jolokia/:/opt/jolokia/
+  ports:
+    - 7073:7070
