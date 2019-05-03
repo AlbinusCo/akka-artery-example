@@ -1,11 +1,10 @@
-package me.albinus.akka.artery.example
+package me.albinus.akka.artery.example.cluster
 
+import akka.actor.{ Actor, ActorLogging }
 import akka.cluster.Cluster
 import akka.cluster.ClusterEvent._
-import akka.actor.ActorLogging
-import akka.actor.Actor
 
-class ClusterListener extends Actor with ActorLogging {
+final class ClusterListener extends Actor with ActorLogging {
 
   private val cluster = Cluster(context.system)
 

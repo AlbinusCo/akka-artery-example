@@ -41,6 +41,11 @@ libraryDependencies ++= Seq(
   "me.albinus" %% "akka-scalapb-serialization" % "1.0.2"
 ) ++ akka ++ scalaPb
 
+libraryDependencies ++= Seq(
+  "com.lightbend.akka.management" %% "akka-management" % "1.0.0",
+  "com.lightbend.akka.management" %% "akka-management-cluster-http" % "1.0.0"
+)
+
 licenses := Seq(
   (
     "Apache-2.0",
