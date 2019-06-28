@@ -1,10 +1,10 @@
-resolvers += Resolver.bintrayRepo("albinusco", "sbt-plugins")
+resolvers += Resolver.bintrayRepo("rashad", "sbt-plugins")
 
 resolvers += Resolver.bintrayRepo("thesamet", "sbt-plugins")
 
 resolvers += Resolver.bintrayRepo("beyondthelines", "maven")
 
-addSbtPlugin("me.albinus" % "albinus-code-style" % "1.1.4")
+addSbtPlugin("click.rashad" % "scala-code-style" % "1.1.8")
 
 addSbtPlugin("org.foundweekends" % "sbt-bintray" % "0.5.4")
 

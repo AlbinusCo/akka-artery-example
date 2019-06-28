@@ -1,4 +1,4 @@
-package me.albinus.akka.artery.example.sharding
+package click.rashad.akka.artery.example.sharding
 
 import akka.actor._
 import akka.cluster.sharding._

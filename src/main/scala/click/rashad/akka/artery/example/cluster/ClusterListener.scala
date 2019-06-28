@@ -1,6 +1,6 @@
-package me.albinus.akka.artery.example.cluster
+package click.rashad.akka.artery.example.cluster
 
-import akka.actor.{ Actor, ActorLogging }
+import akka.actor._
 import akka.cluster.Cluster
 import akka.cluster.ClusterEvent._
 

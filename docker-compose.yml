@@ -1,7 +1,7 @@
 version: '2'
 services:
  node1:
-  image: albinusco/akka-artery-example:1.0.2
+  image: akka-artery-example:1.0.3
   container_name: node1
   hostname: node1
   volumes:
@@ -11,7 +11,7 @@ services:
     - 7071:7070
     - 8558:8558
  node2:
-  image: albinusco/akka-artery-example:1.0.2
+  image: akka-artery-example:1.0.3
   container_name: node2
   hostname: node2
   depends_on:
@@ -23,7 +23,7 @@ services:
     - 7072:7070
     - 8559:8558
  node3:
-  image: albinusco/akka-artery-example:1.0.2
+  image: akka-artery-example:1.0.3
   container_name: node3
   hostname: node3
   depends_on:

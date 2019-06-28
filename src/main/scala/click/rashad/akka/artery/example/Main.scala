@@ -1,21 +1,21 @@
-package me.albinus.akka.artery.example
+package click.rashad.akka.artery.example
 
 import akka.actor._
 import akka.cluster.Cluster
 import akka.management.scaladsl.AkkaManagement
-import me.albinus.akka.artery.example.cluster.ClusterListener
-import me.albinus.akka.artery.example.sharding.ShardingExtension
-import me.albinus.commons.config._
+import click.rashad.akka.artery.example.cluster.ClusterListener
+import click.rashad.akka.artery.example.sharding.ShardingExtension
+import click.rashad.commons.config._
 
 object Main extends App {
 
-  private val config = AlbinusConfig.load(AppType.Server)
+  private val config = ScalaConfig.load(AppType.Server)
 
   if (config.getBoolean("many-cluster")) {
 
     val system1 = ActorSystem(
       "akka-artery-example",
-      AlbinusConfig.load(AppType.Server).getConfig("akka-system-1")
+      ScalaConfig.load(AppType.Server).getConfig("akka-system-1")
     )
     AkkaManagement(system1).start()
     ShardingExtension(system1)
@@ -23,7 +23,7 @@ object Main extends App {
 
     val system2 = ActorSystem(
       "akka-artery-example",
-      AlbinusConfig.load(AppType.Server).getConfig("akka-system-2")
+      ScalaConfig.load(AppType.Server).getConfig("akka-system-2")
     )
     AkkaManagement(system2).start()
     ShardingExtension(system2)
@@ -31,7 +31,7 @@ object Main extends App {
 
     val system3 = ActorSystem(
       "akka-artery-example",
-      AlbinusConfig.load(AppType.Server).getConfig("akka-system-3")
+      ScalaConfig.load(AppType.Server).getConfig("akka-system-3")
     )
     AkkaManagement(system3).start()
     ShardingExtension(system3)
